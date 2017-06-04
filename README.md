@@ -2,8 +2,9 @@
 
 Deivis Treier, supervisor PhD Raimundas Matulevičius
 University of Tartu, Faculty of Science and Technology, Institute of Computer Science, MSc Cyber Security
-### Poster
+### Details
 Download [poster](https://github.com/DeltaTango/thesis/blob/master/poster_deivis.pdf "poster") from here.
+Download [paper](https://github.com/DeltaTango/thesis/blob/master/Treier_IVCM09_2017.pdf "poster") from here.
 
 ### Introduction
 In Estonian state IT systems and registries application of IT Baseline Security System (ISKE) is mandatory. Some data carries highest ISKE integrity sub class "T3" where three crucial sections apply. In those sections number of security requirements are elicited. During research we developed Proof of Concept solution to show how to implement selected requirement and achive higher data protection. We propose solution as template for third party developers and state institutions IT departments as reference system to use in production systems. We hope public discussion about problem domain helps to enchange data security in state and private sector.
