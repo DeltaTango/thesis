@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+## Research and Proof of Concept of Selected ISKE Highest Level Integrity Requirements
 
-You can use the [editor on GitHub](https://github.com/DeltaTango/thesis/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Deivis Treier, supervisor PhD Raimundas Matulevičius
+University of Tartu, Faculty of Science and Technology, Institute of Computer Science, MSc Cyber Security
+### Poster
+Download [poster](https://github.com/DeltaTango/thesis/blob/master/poster_deivis.pdf "poster") from here.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Introduction
+In Estonian state IT systems and registries application of IT Baseline Security System (ISKE) is mandatory. Some data carries highest ISKE integrity sub class "T3" where three crucial sections apply. In those sections number of security requirements are elicited. During research we developed Proof of Concept solution to show how to implement selected requirement and achive higher data protection. We propose solution as template for third party developers and state institutions IT departments as reference system to use in production systems. We hope public discussion about problem domain helps to enchange data security in state and private sector.
 
-### Markdown
+### Research Challenges
+• The lack of public and systematic approach to the subject domain
+• The lack of understanding about selected security requirements
+• The lack of publicly available reference implementations
+• The lack of understanding the data tampering detection process
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Core Features Of The Solution
+• Data is inserted and accessed via REST API
+• Data is handled in JSON format
+• Data is digitally signed using standardised format
+• Digital signature has legal effect outside database
+• Digital signature ensures integrity of data
+• Data is stored in open source relational database
+• Database records are cryptographically linked using hash link
+• Hash link meta info is deposited internally
+• Database hash link correctness can be regularly validated
+• Database tampering detection should be maintained by department of security
 
-```markdown
-Syntax highlighted code block
+### Working Principles Of The Solution
+Data is stored and accessed via REST API of Information Application System (IAS). In IAS data is digitally signed using format what complies with EU eIDAS regulation. Data is stored in Database Management System (DBMS). All main data records are chronologically linked with previous records forming cronologically ordered hash link. Meta info of hash link is deposited using syslog and Syslog-ng to Audit Application System (AAS) and stored in separate database. When database tampering detection process executed by AAS, hash link meta info is sent to DBMS and table hash link is recalculated. Calculation result is compared with meta info stored in AAS. It is highly recommended to deploy  and maintain AAS under separate administrative right than DBMS.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DeltaTango/thesis/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Architecture Of The Solution
+![](https://github.com/DeltaTango/thesis/blob/master/images/diagram_complete.png?raw=true)
